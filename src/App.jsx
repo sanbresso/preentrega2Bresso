@@ -1,10 +1,13 @@
-import Footer from "./Footer.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./components/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
+
 function App() {
-  let nombre = "sofia";
   return (
     <div>
-      <h1>hola {nombre}</h1>;
-      <Footer />;
+      <Navbar />
+      <Home />
+      <Footer />
     </div>
   );
 }
