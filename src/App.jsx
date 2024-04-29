@@ -1,13 +1,16 @@
-import Footer from "./components/Footer.jsx";
-import Home from "./components/Home.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/layout/footer/Footer.jsx";
+import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer.jsx";
+import Navbar from "./components/layout/navbar/Navbar.jsx";
+import Counter from "./components/common/counter/Counter.jsx";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Home />
+      <ItemListContainer />
       <Footer />
+
+      <Counter />
     </div>
   );
 }
