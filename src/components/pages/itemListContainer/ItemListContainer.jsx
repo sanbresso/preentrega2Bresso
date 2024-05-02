@@ -1,17 +1,29 @@
 import "../itemListContainer/ItemListContainer.css";
-import ProductCard from "../../common/productCard/ProductCard.jsx";
-const ItemListContainer = ({ greeting }) => {
+import ItemList from "./ItemList.jsx";
+import { useEffect, useState } from "react";
+import { products } from "../../../productsMock.js";
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    const getProducts = new Promise((resolve, reject) => {
+      let x = true;
+      if (x) {
+        setTimeout(() => {
+          resolve(products);
+        }, 2000);
+      } else {
+        reject({ status: 400, message: "Algo salió mal" });
+      }
+    });
+    getProducts
+      .then((res) => setItems(res))
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div>
-      <h1>{greeting}</h1>
-      <img
-        src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
-        alt="Logo"
-      />
-      {/* ACÁ VAN A IR LAS TARJETAS */}
-      <ProductCard titulo="titulo 1" descripcion="descripcion" precio={200} />
-      <ProductCard titulo="titulo 2" descripcion="descripcion" precio={300} />
-      <ProductCard titulo="titulo 3" descripcion="descripcion" precio={400} />
+      <ItemList items={items} />
     </div>
   );
 };

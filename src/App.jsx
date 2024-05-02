@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Layout>
-        <ItemListContainer greeting={"Bievenidxs al catálogo de insumos"} />
+        <ItemListContainer />
 
         <CounterContainer />
         <CartContainer />

@@ -4,9 +4,11 @@ const Navbar = ({ children }) => {
   return (
     <>
       <div className="containerNavbar">
-        <h1>LOGO</h1>
-
-        <ul>
+        <img
+          src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
+          alt="LOGO NAILS BY BREIK"
+        />
+        <ul className="categories">
           <li>Geles</li>
           <li>Manicuría</li>
           <li>Decoración</li>
