@@ -1,16 +1,17 @@
-import Footer from "./components/layout/footer/Footer.jsx";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer.jsx";
-import Navbar from "./components/layout/navbar/Navbar.jsx";
-import Counter from "./components/common/counter/Counter.jsx";
+import CounterContainer from "./components/common/counter/CounterContainer.jsx";
+import Layout from "./components/layout/Layout.jsx";
+import CartContainer from "./components/pages/cart/CartContainer.jsx";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <ItemListContainer />
-      <Footer />
+      <Layout>
+        <ItemListContainer greeting={"Bievenidxs al catálogo de insumos"} />
 
-      <Counter />
+        <CounterContainer />
+        <CartContainer />
+      </Layout>
     </div>
   );
 }

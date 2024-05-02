@@ -1,6 +1,6 @@
 import "../navbar/Navbar.css";
 import CartWidget from "../../common/cartWidget/CartWidget.jsx";
-const Navbar = () => {
+const Navbar = ({ children }) => {
   return (
     <>
       <div className="containerNavbar">
@@ -12,6 +12,7 @@ const Navbar = () => {
           <li>Decoración</li>
         </ul>
         <CartWidget />
+        {children}
       </div>
     </>
   );
