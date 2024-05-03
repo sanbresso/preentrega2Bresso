@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { products } from "../../../productsMock.js";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [error, seterror] = useState(null);
   useEffect(() => {
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
@@ -15,15 +16,11 @@ const ItemListContainer = () => {
         reject({ status: 400, message: "Algo salió mal" });
       }
     });
-    getProducts
-      .then((res) => setItems(res))
-      .catch((error) => {
-        console.log(error);
-      });
+    getProducts.then((res) => setItems(res)).catch((error) => setError(error));
   }, []);
   return (
     <div>
-      <ItemList items={items} />
+      <ItemList items={items} error={error} />
     </div>
   );
 };

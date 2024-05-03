@@ -1,28 +1,24 @@
+import { Grid } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
 
-const ItemList = ({ items }) => {
-  console.log(items);
+const ItemList = ({ items, error }) => {
   return (
-    <div>
-      {items.length > 0 ? (
-        <>
-          <ProductCard
-            title={items[0].title}
-            price={items[0].price}
-            description={items[0].description}
-            img={items[0].img}
-          />
-          <ProductCard
-            title={items[0].title}
-            price={items[0].price}
-            description={items[0].description}
-            img={items[0].img}
-          />
-        </>
-      ) : (
-        <h2>Cargando...</h2>
-      )}
-    </div>
+    <Grid container>
+      {items.map(({ id, title, price, description, img }) => {
+        return (
+          <Grid item key={id}>
+            <ProductCard
+              title={title}
+              price={price}
+              description={description}
+              img={img}
+              id={id}
+            />
+          </Grid>
+        );
+      })}
+      {error && <h2>{error.message}</h2>}
+    </Grid>
   );
 };
 

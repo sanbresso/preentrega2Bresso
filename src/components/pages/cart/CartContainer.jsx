@@ -1,6 +1,7 @@
 import Cart from "./Cart";
 
 const CartContainer = () => {
-  return <Cart />;
+  let productosAgregados = [];
+  return <Cart productosAgregados={productosAgregados} />;
 };
 export default CartContainer;
