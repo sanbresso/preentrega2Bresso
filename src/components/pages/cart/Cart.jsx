@@ -1,4 +1,4 @@
-const Cart = () => {
+const Cart = ({ productosAgregados }) => {
   return (
     <div>
       <h1>Este es el carrito</h1>
