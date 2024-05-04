@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { products } from "../../../productsMock.js";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [error, seterror] = useState(null);
+  const [error, setError] = useState(null);
   useEffect(() => {
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
