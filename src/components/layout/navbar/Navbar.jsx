@@ -1,20 +1,27 @@
 import "../navbar/Navbar.css";
 import CartWidget from "../../common/cartWidget/CartWidget.jsx";
-const Navbar = ({ children }) => {
+import { Link } from "react-router-dom";
+
+const Navbar = () => {
   return (
     <>
       <div className="containerNavbar">
-        <img
-          src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
-          alt="LOGO NAILS BY BREIK"
-        />
+        <Link to="/">
+          {" "}
+          <img
+            src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
+            alt="LOGO NAILS BY BREIK"
+          />
+        </Link>
+
         <ul className="categories">
-          <li>Geles</li>
-          <li>Manicuría</li>
-          <li>Decoración</li>
+          <Link to="/category/geles">Geles</Link>
+          <Link to="/category/manicuria">Manicuría</Link>
+          <Link to="/category/decoracion">Decoración</Link>
         </ul>
         <CartWidget />
-        {children}
+
+        <Link to="/cart">Ir al carrito</Link>
       </div>
     </>
   );
