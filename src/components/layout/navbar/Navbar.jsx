@@ -6,19 +6,22 @@ const Navbar = () => {
   return (
     <>
       <div className="containerNavbar">
-        <img
-          to="/"
-          src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
-          alt="LOGO NAILS BY BREIK"
-        />
+        <Link to="/">
+          {" "}
+          <img
+            src="https://res.cloudinary.com/dwj4jcs0g/image/upload/v1714145163/nailsby.breik_hjr0qd.png"
+            alt="LOGO NAILS BY BREIK"
+          />
+        </Link>
 
         <ul className="categories">
-          <li to="/category/geles">Geles</li>
-          <li to="/category/manicuria">Manicuría</li>
-          <li to="/category/decoracion">Decoración</li>
+          <Link to="/category/geles">Geles</Link>
+          <Link to="/category/manicuria">Manicuría</Link>
+          <Link to="/category/decoracion">Decoración</Link>
         </ul>
         <CartWidget />
-        <Link></Link>
+
+        <Link to="/cart">Ir al carrito</Link>
       </div>
     </>
   );
